@@ -1,7 +1,6 @@
 import os.path
 
 from setuptools import find_packages, setup
-from zeroclient import __VERSION__
 
 
 def read(fname):
@@ -11,7 +10,7 @@ def read(fname):
 setup(
     name="zeroclient",
 
-    version=__VERSION__,
+    version='1.0.0',
 
     description=(""),
     # long_description=read('README.rst'),
@@ -21,11 +20,11 @@ setup(
     author="mikusjelly",
     author_email="mikusjelly@gmail.com",
 
-    license="MIT",
+    license="Apache 2.0",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Topic :: Utilities",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache License",
         "Programming Language :: Python :: 3 :: Only",
     ],
 
