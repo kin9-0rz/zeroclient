@@ -260,7 +260,7 @@ class JsonRpcClientBase(object):
         try:
             self._client.write(msg.encode("utf8") + b'\n')
             self._client.flush()
-            print('Snippet sent %s.', msg)
+            # print('Snippet sent {}'.format(msg))
         except socket.error as e:
             raise e
 
@@ -275,7 +275,7 @@ class JsonRpcClientBase(object):
         """
         try:
             response = self._client.readline()
-            print('Snippet received: %s', response)
+            # print('Snippet received: {}'.format(response))
             return response
         except socket.error as e:
             raise e
@@ -313,7 +313,7 @@ class JsonRpcClientBase(object):
             apiid = next(self._counter)
             data = {'id': apiid, 'method': method, 'params': args}
             request = json.dumps(data)
-            print(request)
+            # print("request: {}".format(request))
             self._client_send(request)
             response = self._client_receive()
         if not response:
