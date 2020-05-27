@@ -228,7 +228,7 @@ class JsonRpcClientBase(object):
 
         resp = self._cmd(cmd, uid)
         if not resp:
-            raise Exception("ZZZ")
+            raise Exception("No Respone, Try again.")
         result = json.loads(str(resp, encoding='utf8'))
         if result['status']:
             self.uid = result['uid']
@@ -317,15 +317,10 @@ class JsonRpcClientBase(object):
             self._client_send(request)
             response = self._client_receive()
         if not response:
-            raise "No response"
+            raise Exception("No response")
         result = json.loads(str(response, encoding='utf8'))
-        if result['error']:
-            raise result['error']
-        if result['id'] != apiid:
-            raise result['id']
-        if result.get('callback') is not None:
-            pass
-        return result['result']
+        
+        return result
 
     def __getattr__(self, name):
         """Wrapper for python magic to turn method calls into RPC calls."""
