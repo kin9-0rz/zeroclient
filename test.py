@@ -11,9 +11,23 @@ import ast
 client = zero_client.SnippetClient()
 client.connect()
 
+print(client.is_alive)
+
 result = client.rpc("hello")
 print("result:")
 print(result)
+
+data = {
+    "className": "fsnnmqoi.cxvwew.vmiiire.ta", 
+    "methodName": "ALLATORIxDEMO", 
+    "arguments": ["\u0015%U*[=S&TfW+X QgR=W%"], 
+    "argumentTypes": ["String"],
+    "returnType": "String",
+}
+result = client.rpc("InvokeStaticMethod", data)
+print("result:")
+print(result)
+
 
 # data = {
 #     'className': 'ujvnd.wx.ogp.ul.c.a',
@@ -34,18 +48,18 @@ print(result)
 #     'className': 'ujvnd.wx.ogp.ul.a.a',
 #     'methodName': 'a',
 #     'arguments': [[17, 158, 75, 105, 236, 104, 83, 179, 162, 102, 228, 92, 138, 48, 83, 115, 64, 201, 78, 238, 231, 21, 103, 13, 56, 17, 223, 84, 77, 2, 48, 138], 'fmsd1234'],
-#     'argumentTypes': ['byte[]', 'java.lang.String']
+#     'argumentTypes': ['byte[]', 'String']
 # }
 # result = client.rpc("InvokeStaticMethod", data)
 # print(result, type(result))
 # print(bytearray(result))
 
 
-data = {
-    'className': 'com.inject.WqnqVtPhExE',
-    'methodName': 'getVal',
-    'arguments': ['EmQAXg8='],
-    'argumentTypes': ['java.lang.String']
-}
-result = client.rpc("InvokeStaticMethod", data)
-print(result, type(result))
+# data = {
+#     'className': 'com.inject.WqnqVtPhExE',
+#     'methodName': 'getVal',
+#     'arguments': ['EmQAXg8='],
+#     'argumentTypes': ['String']
+# }
+# result = client.rpc("InvokeStaticMethod", data)
+# print(result, type(result))
